@@ -1,0 +1,1110 @@
+/* =========================
+   🔧 Base + Reset
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* =========================
+   🌐 Navbar
+========================= */
+.navbar {
+  background-color: #7a1f52;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 40px;
+  transform: scale(3.5);
+  transform-origin: left;
+  display: block;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.2rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #D8BFD8;
+}
+
+/* =========================
+    Hero (Homepage Top)
+========================= */
+.hero {
+  background-color: #f9f9f9;
+  text-align: center;
+  padding: 8rem 2rem 6rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  color: #7a1f52;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #555;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* =========================
+    Buttons
+========================= */
+.btn {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.primary {
+  background-color: #7a1f52;
+  color: white;
+}
+
+.primary:hover {
+  background-color: #5d173f;
+}
+
+.secondary {
+  background-color: white;
+  color: #7a1f52;
+  border: 2px solid #7a1f52;
+}
+
+.secondary:hover {
+  background-color: #f4d1e3;
+}
+
+/* =========================
+    Features Section
+========================= */
+.features {
+  background-color: #ffffff;
+  padding: 6rem 2rem;
+  text-align: center;
+  scroll-margin-top: 100px;
+}
+
+.features h2 {
+  color: #7a1f52;
+  margin-bottom: 2rem;
+}
+
+.feature-cards {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(122, 31, 82, 0.1);
+  width: 280px;
+  text-align: left;
+}
+
+.card h3 {
+  color: #7a1f52;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  color: #555;
+}
+
+/* =========================
+   ℹ About Section
+========================= */
+.about {
+  background-color: #f4f4f4;
+  padding: 6rem 2rem;
+  text-align: center;
+  scroll-margin-top: 100px;
+}
+
+.about h2 {
+  color: #7a1f52;
+  margin-bottom: 1.5rem;
+}
+
+.about p {
+  max-width: 700px;
+  margin: 0 auto 1rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+/* =========================
+    Footer
+========================= */
+.footer {
+  background-color: #5d173f;
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+/* =========================
+    Auth Pages (Login / Signup)
+========================= */
+.login-body {
+  background-color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 3rem 1rem;
+  flex: 1;
+}
+
+.login-box {
+  background-color: #f4f4f4;
+  padding: 2rem 3rem;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 0 10px rgba(122, 31, 82, 0.1);
+  text-align: center;
+}
+
+.login-box h2 {
+  color: #7a1f52;
+  margin-bottom: 1.5rem;
+}
+
+.login-box label {
+  display: block;
+  text-align: left;
+  margin: 0.8rem 0 0.3rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.login-box .btn {
+  width: 100%;
+  margin-top: 1.2rem;
+}
+
+
+/* =========================
+    Extra Links
+========================= */
+.extra-links {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.extra-links a {
+  color: #7a1f52;
+  text-decoration: none;
+}
+
+.extra-links a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+    Flash Messages
+========================= */
+.flash {
+  padding: 12px 20px;
+  margin: 15px 0;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  animation: fadeIn 0.8s ease;
+}
+
+/* Error flash (like Password too weak) */
+.flash.error {
+  background-color: #fdecea;
+  color: #a94442;
+  border: 1px solid #f5c6cb;
+}
+
+/* Success flash (like Account created) */
+.flash.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* =========================
+    Password Strength Bar
+========================= */
+.password-strength {
+  margin-top: 0.5rem;
+}
+
+#strength-bar {
+  height: 6px;
+  width: 0;
+  background-color: gray;
+  border-radius: 5px;
+  transition: width 0.3s ease-in-out;
+  margin-bottom: 4px;
+}
+
+/* =========================
+    Dashboard Base Layout
+========================= */
+body.dashboard-body {
+  display: flex;
+  background-color: #f9f9f9;
+  color: #333;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* =========================
+    Sidebar
+========================= */
+.sidebar {
+  width: 220px;
+  background-color: #2c2f48;
+  color: white;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: 2rem 1rem;
+}
+
+.sidebar-logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.sidebar-logo img {
+  width: 120px;
+  height: auto;
+  display: block;
+  margin: 0 auto 1.5rem;
+}
+
+.sidebar-links {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar-links li {
+  margin: 1rem 0;
+}
+
+.sidebar-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  display: block;
+  padding: 0.5rem;
+  transition: background 0.2s ease;
+}
+
+.sidebar-links a:hover {
+  background-color: #3d4059;
+  border-radius: 4px;
+}
+
+/* =========================
+    Main Dashboard Area
+========================= */
+.main-content {
+  margin-left: 220px;
+  padding: 2rem;
+  width: 100%;
+  background-color: white;
+  min-height: 100vh;
+  animation: fadeIn 0.3s ease-in;
+  animation-fill-mode: both;
+  animation-delay: 0.06s;
+}
+
+.top-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #7a1f52;
+  border-bottom: 1px solid #ddd;
+}
+
+/* =========================
+    Vault Dashboard Section
+========================= */
+.vault-dashboard {
+  padding-top: 2rem;
+}
+
+.vault-dashboard h2 {
+  color: #7a1f52;
+  margin-bottom: 1rem;
+}
+
+.vault-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.vault-form input {
+  flex: 1 1 200px;
+  padding: 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.vault-form .btn {
+  padding: 0.6rem 1.2rem;
+  background-color: #7a1f52;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* =========================
+    Vault Search Bar
+========================= */
+.search-bar {
+  margin-bottom: 1.5rem;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+
+/* =========================
+    Vault List Entries
+========================= */
+/* Vault List */
+.vault-list {
+  margin-top: 2rem;
+  padding: 0;
+  list-style: none;
+}
+
+.vault-list li {
+  background-color: #fdf7fb;
+  border: 1px solid #e2c1d5;
+  border-left: 5px solid #7a1f52;
+  padding: 1.2rem;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  color: #4a2b3b;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vault-list li:hover {
+  background-color: #fceef6;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.vault-entry .entry-info {
+  flex-grow: 1;
+  margin-bottom: 0.5rem;
+}
+
+.vault-list .entry-account {
+  font-weight: 600;
+  color: #7a1f52;
+}
+
+.vault-list .entry-username {
+  font-weight: 500;
+  color: #444;
+}
+
+.vault-list span {
+  font-weight: 500;
+  margin: 0 0.5rem;
+  color: #333;
+}
+
+.btn.small {
+  padding: 0.4rem 0.9rem;
+  font-size: 0.85rem;
+  background-color: #7a1f52;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn.small:hover {
+  background-color: #5d173f;
+}
+
+.entry-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.btn.secondary {
+  background-color: white;
+  color: #7a1f52;
+  border: 2px solid #7a1f52;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn.secondary:hover {
+  background-color: #f5eaf0;
+}
+
+
+.btn.danger {
+  background-color: #cc0000;
+  color: white;
+}
+
+.btn.danger:hover {
+  background-color: #a60000;
+}
+
+
+/* =========================
+    Settings Layout
+========================= */
+.settings-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 3rem 2rem;
+  min-height: 100vh;
+}
+
+.settings-container {
+  width: 100%;
+  max-width: 800px;
+  background-color: white;
+  padding: 2.5rem 3rem;
+  border-radius: 16px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+}
+
+.settings-heading {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: #7a1f52;
+}
+
+.settings-section {
+  margin-bottom: 2.5rem;
+}
+
+.settings-section h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.section-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.section-content .text {
+  flex: 1;
+}
+
+.section-content .action {
+  white-space: nowrap;
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+
+/* =========================
+    Vault Empty State
+========================= */
+.vault-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 2rem;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  margin-top: 3rem;
+}
+
+body.dark-mode .vault-empty-state {
+  background-color: #2a2d3a;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.vault-empty-state h2 {
+  font-size: 2rem;
+  color: #7a1f52;
+  margin: 1rem 0 0.5rem;
+}
+
+body.dark-mode .vault-empty-state h2 {
+  color: #f0f0f0;
+}
+
+.vault-empty-state p {
+  color: #555;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+body.dark-mode .vault-empty-state p {
+  color: #ccc;
+}
+
+.vault-empty-state .btn.primary {
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  background-color: #7a1f52;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.vault-empty-state .btn.primary:hover {
+  background-color: #5d173f;
+}
+
+/* Vault image/banner */
+.vault-logo-banner {
+  height: 180px;
+  max-width: 100%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 1;
+}
+
+body.dark-mode .vault-logo-banner {
+  opacity: 0.95;
+}
+
+
+/* =========================
+    Session Timeout Modal
+========================= */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+  background: #fff;
+  margin: 20% auto;
+  padding: 1.5rem;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.modal-content button {
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background-color: #7a1f52;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* =========================
+    Mobile Responsive Fixes
+========================= */
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    left: -220px;
+    transition: left 0.3s ease;
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+
+  .sidebar-toggle {
+    display: block;
+    background: none;
+    font-size: 1.5rem;
+    border: none;
+    margin-right: 1rem;
+    cursor: pointer;
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding: 2rem 1rem;
+  }
+
+  .settings-wrapper {
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+  }
+
+  .settings-container {
+    width: 100%;
+    padding: 2rem;
+  }
+}
+
+.sidebar-toggle {
+  display: none;
+}
+
+button.disabled,
+a.btn.disabled {
+  opacity: 0.6;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+/* =========================
+    🌙 Dark Mode Theme
+========================= */
+body.dark-mode {
+  background-color: #0d0d0d;
+  color: #f0f0f0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Top UI */
+body.dark-mode .navbar,
+body.dark-mode .top-navbar,
+body.dark-mode .sidebar {
+  background-color: #2e3040;
+  color: #fff;
+  border-bottom: 1px solid #444;
+}
+
+body.dark-mode .sidebar a {
+  color: #eee;
+}
+
+body.dark-mode .sidebar a:hover {
+  background-color: #3a3c4d;
+}
+
+/* Vault input fields fix in Dark Mode */
+body.dark-mode .vault-list input {
+  background-color: #393c4a;
+  color: #ffffff;
+  border: 1px solid #555;
+}
+
+body.dark-mode .vault-list input:focus {
+  outline: none;
+  border: 1px solid #9c296b;
+  background-color: #44475a;
+}
+
+/* Vault List Text Fix in Dark Mode */
+body.dark-mode .vault-list .entry-account,
+body.dark-mode .vault-list .entry-username,
+body.dark-mode .vault-list span {
+  color: #ffffff;
+}
+
+/* Fix Dashboard Subtitle in Dark Mode */
+body.dark-mode .dashboard-hero p {
+  color: #f4cbe0; /* Light pink */
+}
+
+body.dark-mode .sidebar-logo img {
+  filter: brightness(1.2) contrast(1.1);
+}
+
+
+/* Containers */
+body.dark-mode .main-content,
+body.dark-mode .vault-empty-state,
+body.dark-mode .login-box,
+body.dark-mode .settings-container,
+body.dark-mode .modal-content {
+  background-color: #1a1a1a;
+  color: #f0f0f0;
+}
+
+/* Inputs */
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode textarea {
+  background-color: #44475a;
+  color: #fff;
+  border: 1px solid #666;
+}
+
+body.dark-mode input::placeholder {
+  color: #aaa;
+}
+
+body.dark-mode input[type="checkbox"],
+body.dark-mode input[type="radio"] {
+  accent-color: #9c296b;
+}
+
+/* Vault Entries */
+body.dark-mode .vault-list li {
+  background-color: #393c4a;
+  color: #ddd;
+  border-color: #555;
+}
+
+/* Flash Alerts */
+body.dark-mode .flash {
+  background-color: #4a3241;
+  color: #f4cbe0;
+  border: 1px solid #aa5c84;
+}
+
+/* Buttons */
+body.dark-mode .btn.primary {
+  background-color: #9c296b;
+  color: white;
+}
+
+body.dark-mode .btn.primary:hover {
+  background-color: #751d50;
+}
+
+body.dark-mode .btn.secondary {
+  background-color: transparent;
+  color: #f0cbe4;
+  border: 2px solid #9c296b;
+}
+
+body.dark-mode .btn.secondary:hover {
+  background-color: #44475a;
+}
+
+/* Password strength bar */
+body.dark-mode #strength-bar {
+  background-color: #666;
+}
+
+/* Modal shadow */
+body.dark-mode .modal-content {
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.1);
+}
+
+/* Sidebar logo tweak in dark */
+body.dark-mode .sidebar-logo img {
+  filter: brightness(1.2) contrast(1.1);
+}
+
+/* Dashboard welcome layout */
+/* 🔒 Vault Hero Section */
+.dashboard-hero {
+  text-align: center;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dashboard-hero h1 {
+  font-size: 2.5rem;
+  color: #7a1f52;
+  margin-bottom: 0.5rem;
+}
+
+.dashboard-hero p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+  max-width: 600px;
+}
+
+.dashboard-hero .btn {
+  margin-bottom: 2rem;
+}
+
+/* Big Vault Banner */
+.hero-banner-img {
+  max-width: 480px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* =============================*/
+/* ============================= */
+/* Password Generator Section (Stacked Layout) */
+.password-generator-section {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Generator Button */
+.password-generator-section .btn.secondary {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  background-color: #7a1f52;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.password-generator-section .btn.secondary:hover {
+  background-color: #9b2669;
+}
+
+/* Generator Output + Copy Button Row */
+.generator-row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Generator Output Field */
+#generated-password {
+  flex: 1;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Copy Button Styling */
+.copy-btn {
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #7a1f52;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.copy-btn:hover {
+  background-color: #9b2669;
+}
+
+
+
+/* ============================= */
+/* 🌟 Form Layout & Fields */
+/* ============================= */
+
+.form-container {
+  max-width: 550px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.stacked-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.stacked-form label {
+  font-weight: bold;
+  margin-bottom: -0.4rem;
+  color: #333;
+}
+
+.stacked-form input[type="text"],
+.stacked-form input[type="password"] {
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: #f9f9f9;
+  color: #333;
+}
+
+/* ============================= */
+/* 🔐 Password Generator Section */
+/* ============================= */
+
+.generator-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+#generated-password {
+  flex: 1;
+  min-width: 200px;
+  padding: 0.5rem;
+  font-size: 0.95rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Copy Button Styling */
+.copy-btn {
+  font-size: 0.85rem;
+  padding: 0.5rem 0.75rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #7a1f52;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.copy-btn:hover {
+  background-color: #9b2669;
+}
+
+/* Generator Button - Light Purple Variant */
+.light-purple {
+  background-color: #b58dbf;
+  color: white;
+}
+
+.light-purple:hover {
+  background-color: #a173ad;
+}
+
+
