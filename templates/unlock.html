@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Unlock Vault | Cryptella</title>
+  <link rel="icon" href="{{ url_for('static', filename='logo.png') }}" type="image/png" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+
+<body class="login-body">
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="{{ url_for('static', filename='logo.png') }}" alt="Cryptella Logo" height="28" />
+    </div>
+    <ul class="nav-links">
+      <li><a href="{{ url_for('routes.home') }}">Home</a></li>
+    </ul>
+  </nav>
+
+  <!-- Unlock Box -->
+  <div class="login-container">
+    <div class="login-box">
+      <h2>Session Expired</h2>
+      <p>For your security, your session has expired. Please re-enter your password to continue.</p>
+
+      <!-- Flash messages -->
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          <div class="flash-messages">
+            {% for category, message in messages %}
+              <div class="flash {{ category }}">{{ message }}</div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endwith %}
+
+
+      <!-- Unlock Form -->
+      <form method="POST" autocomplete="off">
+        <!-- Dummy fields to block browser autofill -->
+        <input type="text" name="fakeusernameremembered" style="display:none">
+        <input type="password" name="fakepasswordremembered" style="display:none">
+      
+        <label for="password">Password</label>
+        <input type="password" name="password" placeholder="Enter your password" autocomplete="new-password" required />
+        
+        <button type="submit" class="btn primary">Unlock Vault</button>
+      </form>
+      
+
+      <div class="extra-links">
+        <a href="{{ url_for('routes.home') }}">← Go back home</a>
+        <a href="{{ url_for('routes.recover') }}">Forgot your password?</a>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

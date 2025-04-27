@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cryptella | Login</title>
+  <link rel="icon" href="{{ url_for('static', filename='logo.png') }}" type="image/png" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+
+<body class="login-body">
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="{{ url_for('static', filename='logo.png') }}" alt="Cryptella Logo" height="32">
+    </div>
+    <ul class="nav-links">
+      <li><a href="{{ url_for('routes.home') }}">Home</a></li>
+    </ul>
+  </nav>
+
+  <!-- Login Form Container -->
+  <div class="login-container">
+    <div class="login-box">
+      <h2>Welcome Back</h2>
+
+  <!-- Flash Messages -->
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <div class="flash-messages">
+        {% for category, message in messages %}
+          <div class="flash {{ category }}">{{ message }}</div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endwith %}
+
+
+      <!-- Login Form -->
+      <form method="POST" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+        <input type="text" name="fakeusernameremembered" style="display:none">
+        <input type="password" name="fakepasswordremembered" style="display:none">
+        
+        <label for="username">Email</label>
+        <input type="text" id="username" name="login_username" placeholder="Enter your email" autocomplete="nope" required>
+      
+        <label for="password">Password</label>
+        <input type="password" id="password" name="login_password" placeholder="Enter your password" autocomplete="new-password" required>
+      
+        <button type="submit" class="btn primary">Log In</button>
+      </form>
+
+      <!-- Extra Links -->
+      <div class="extra-links">
+        <p><a href="{{ url_for('routes.recover') }}">Forgot your password?</a></p>
+        <p>New to Cryptella? <a href="{{ url_for('routes.signup') }}">Create an account</a></p>
+        <p><a href="{{ url_for('routes.home') }}">← Back to home</a></p>
+      </div>
+    </div>
+  </div>
+
+    <!-- Inject Flash Messages for JS -->
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <script id="flash-messages-json" type="application/json">
+          {{ messages | tojson }}
+        </script>
+      {% endif %}
+    {% endwith %}
+
+
+
+
+  <!-- JS -->
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

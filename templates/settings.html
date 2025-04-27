@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cryptella | Settings</title>
+  <link rel="icon" href="{{ url_for('static', filename='logo.png') }}" type="image/png" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+
+<body class="dashboard-body">
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="sidebar-logo">
+      <img src="{{ url_for('static', filename='logo.png') }}" alt="Cryptella Logo" height="28">
+    </div>
+    <ul class="sidebar-links">
+      <li><a href="{{ url_for('routes.vault') }}">Dashboard</a></li>
+      <li><a href="{{ url_for('routes.add_password') }}">Add Password</a></li>
+      <li><a href="{{ url_for('routes.passwords') }}">Passwords</a></li>
+      <li><a href="{{ url_for('routes.settings') }}">Settings</a></li>
+      <li><a href="{{ url_for('routes.logout') }}">Logout</a></li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <div class="settings-wrapper">
+      <div class="settings-container">
+        <h2 class="settings-heading">Account Settings</h2>
+
+        <!-- 2FA Toggle -->
+        <div class="settings-section">
+          <div class="section-content">
+            <div class="text">
+              <h3>Two-Factor Authentication (2FA)</h3>
+              <p>Add extra protection with two-factor authentication.</p>
+            </div>
+            <div class="action">
+              <a href="{{ url_for('routes.toggle_2fa') }}" class="btn secondary">
+                {% if is_2fa_enabled %}Disable 2FA{% else %}Enable 2FA{% endif %}
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recovery Email -->
+        <div class="settings-section">
+          <div class="section-content">
+            <div class="text">
+              <h3>Recovery Email</h3>
+              <p>Update your recovery email to reset your password if needed.</p>
+            </div>
+            <div class="action">
+              <a href="{{ url_for('routes.add_recovery_email') }}" class="btn secondary">Add/Change Email</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dark Mode -->
+        <div class="settings-section">
+          <h3>Appearance</h3>
+          <label class="toggle">
+            <input type="checkbox" id="theme-toggle" />
+            <span>Dark Mode</span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Session Modal -->
+<div id="sessionModal" class="modal" style="display:none;">
+  <div class="modal-content">
+    <p id="sessionMessage">You'll be locked out soon.</p>
+    <button id="stayButton" class="btn">Stay Signed In</button>
+  </div>
+</div>
+
+
+  <!-- Flash Message Injection -->
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <script id="flash-messages-json" type="application/json">
+        {{ messages | tojson }}
+      </script>
+    {% endif %}
+  {% endwith %}
+
+  <!-- JS -->
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

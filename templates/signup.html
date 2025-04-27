@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cryptella | Sign Up</title>
+  <link rel="icon" href="{{ url_for('static', filename='logo.png') }}" type="image/png" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+
+  <style>
+    .flash-messages {
+      margin-bottom: 20px;
+    }
+    .flash {
+      background-color: #f8d7da;
+      color: #721c24;
+      padding: 12px 20px;
+      border: 1px solid #f5c6cb;
+      border-radius: 8px;
+      font-weight: bold;
+      animation: fadeIn 0.8s ease;
+      margin-top: 10px;
+      text-align: center;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body class="login-body">
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="{{ url_for('static', filename='logo.png') }}" alt="Cryptella Logo" height="32">
+    </div>
+    <ul class="nav-links">
+      <li><a href="{{ url_for('routes.home') }}">Home</a></li>
+    </ul>
+  </nav>
+
+  <!-- Signup Form Container -->
+  <div class="login-container">
+    <div class="login-box">
+      <h2>Create Your Cryptella Account</h2>
+
+      <!-- Flash Messages -->
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          <div class="flash-messages">
+            {% for category, message in messages %}
+              <div class="flash {{ category }}">{{ message }}</div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endwith %}
+
+      <!-- Signup Form -->
+      <form method="POST" action="{{ url_for('routes.signup') }}" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+        
+        <label for="fullname">Full Name</label>
+        <input type="text" id="fullname" name="signup_fullname" placeholder="Your full name" autocomplete="nope" required>
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="signup_email" placeholder="Enter your email" autocomplete="nope" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="signup_password" placeholder="Create a secure password" autocomplete="new-password" required>
+
+        <!-- Password Strength Meter -->
+        <div class="password-strength">
+          <div id="strength-bar"></div>
+          <span id="strength-text">Strength: —</span>
+        </div>
+
+        <!-- Password Rules -->
+        <ul style="text-align: left; font-size: 0.85rem; margin: 0.5rem 0 1rem; padding-left: 1.2rem; color: #555;">
+          <li>At least 8 characters</li>
+          <li>At least 1 capital letter</li>
+          <li>At least 1 number</li>
+          <li>At least 1 special symbol</li>
+        </ul>
+
+        <label for="confirm">Confirm Password</label>
+        <input type="password" id="confirm" name="signup_confirm" placeholder="Re-enter your password" autocomplete="new-password" required>
+
+        <button id="signupButton" type="submit" class="btn primary">Sign Up</button>
+      </form>
+
+      <!-- Links -->
+      <div class="extra-links">
+        <p>Already have an account? <a href="{{ url_for('routes.login') }}">Log in</a></p>
+        <p><a href="{{ url_for('routes.home') }}">← Back to home</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

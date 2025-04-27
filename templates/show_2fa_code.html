@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your 2FA Code</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script>
+        function copyToClipboard() {
+            const codeText = document.getElementById("codeValue").innerText;
+            navigator.clipboard.writeText(codeText).then(function() {
+                const copiedMsg = document.getElementById("copiedMessage");
+                copiedMsg.style.display = "inline";
+                setTimeout(() => { copiedMsg.style.display = "none"; }, 1500);
+            });
+        }
+    </script>
+</head>
+<body class="login-body">
+
+<div class="login-container">
+    <div class="login-box">
+        <h2>Your 2FA Code</h2>
+        <p>Click the code below to copy it!</p>
+
+        {% if code %}
+            <div style="margin-top: 20px;">
+                <h3>Your Code:</h3>
+                <div 
+                    id="codeValue" 
+                    onclick="copyToClipboard()" 
+                    class="flash success" 
+                    style="font-size: 24px; cursor: pointer; user-select: none;"
+                    title="Click to Copy">
+                    {{ code }}
+                </div>
+                <div id="copiedMessage" style="color: green; margin-top: 10px; display: none;">
+                    Copied!
+                </div>
+            </div>
+        {% endif %}
+
+        <br>
+
+        <a href="{{ url_for('routes.verify') }}" class="btn primary">Proceed to Verification</a>
+
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            {% for message in messages %}
+              <div class="flash error">{{ message }}</div>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+    </div>
+</div>
+
+</body>
+</html>

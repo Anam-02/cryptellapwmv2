@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Add Recovery Email | Cryptella</title>
+  <link rel="icon" href="{{ url_for('static', filename='logo.png') }}" type="image/png" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+
+<body class="dashboard-body">
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="sidebar-logo">
+      <img src="{{ url_for('static', filename='logo.png') }}" alt="Cryptella Logo" height="28">
+    </div>
+    <ul class="sidebar-links">
+      <li><a href="{{ url_for('routes.vault') }}">Dashboard</a></li>
+      <li><a href="{{ url_for('routes.passwords') }}">Passwords</a></li>
+      <li><a href="{{ url_for('routes.settings') }}">Settings</a></li>
+      <li><a href="{{ url_for('routes.logout') }}">Logout</a></li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <div class="settings-wrapper">
+      <div class="settings-container">
+        <h2 class="settings-heading">Update Recovery Email</h2>
+
+        <!-- Flash Messages -->
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <div class="flash-messages">
+              {% for message in messages %}
+                <div class="flash">{{ message }}</div>
+              {% endfor %}
+            </div>
+          {% endif %}
+        {% endwith %}
+
+        <form method="POST" class="form-section">
+          <label for="recovery_email">Recovery Email Address</label>
+          <input type="email" name="recovery_email" placeholder="e.g. your@email.com" required />
+          <button type="submit" class="btn primary">Save</button>
+        </form>
+
+        <div style="margin-top: 1.5rem;">
+          <a href="{{ url_for('routes.settings') }}" class="btn secondary">← Back to Settings</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cryptella | Dashboard</title>
+  <link rel="icon" href="{{ url_for('static', filename='logo.png') }}" type="image/png" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+
+<body class="dashboard-body">
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="sidebar-logo">
+      <img src="{{ url_for('static', filename='logo.png') }}" alt="Cryptella Logo">
+    </div>
+    <ul class="sidebar-links">
+      <li><a href="{{ url_for('routes.vault') }}">Dashboard</a></li>
+      <li><a href="{{ url_for('routes.add_password') }}">Add Password</a></li>
+      <li><a href="{{ url_for('routes.passwords') }}">Passwords</a></li>
+      <li><a href="{{ url_for('routes.settings') }}">Settings</a></li>
+      <li><a href="{{ url_for('routes.logout') }}">Logout</a></li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+
+    <!-- Top Navbar -->
+    <div class="top-navbar">
+      <span>Welcome back, {{ name }} 👋</span>
+    </div>
+
+<!-- Dashboard Header (top) -->
+<div class="dashboard-hero">
+  <h1>Welcome to Your Secure Vault</h1>
+  <p>Everything you need to manage your passwords securely and conveniently.</p>
+
+  <a href="{{ url_for('routes.add_password') }}" class="btn primary"> Add New Password</a>
+
+  <img src="{{ url_for('static', filename='logo+.png') }}" alt="Cryptella Vault Banner" class="hero-banner-img">
+
+</div>
+
+
+    <!-- Vault search/list would go here later if you have it -->
+    <!-- Example placeholder -->
+    {# <div class="search-bar"><input type="text" placeholder="Search..."></div> #}
+    {# <ul class="vault-list">...entries...</ul> #}
+
+  </div>
+
+<!-- Session Modal -->
+<div id="sessionModal" class="modal" style="display:none;">
+  <div class="modal-content">
+    <p id="sessionMessage">You'll be locked out soon.</p>
+    <button id="stayButton" class="btn">Stay Signed In</button>
+  </div>
+</div>
+
+
+  <!-- Flash Message Script -->
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <script id="flash-messages-json" type="application/json">
+        {{ messages | tojson }}
+      </script>
+    {% endif %}
+  {% endwith %}
+
+  <!-- JS -->
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+  <script>
+    initSessionWatcher(); // ✅ Fix 5: runs only on vault
+  </script>
+
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <link rel="icon" href="{{ url_for('static', filename='logo.png') }}" type="image/png">
+  <title>Cryptella | Home</title>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Cryptella Logo">
+      </div>      
+    <ul class="nav-links">
+      <li><a href="{{ url_for('routes.home') }}">Home</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="{{ url_for('routes.login') }}">Login</a></li>
+      <li><a href="{{ url_for('routes.signup') }}">Sign Up</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Protect What Matters Most</h1>
+    <p>Welcome to Cryptella — your secure, elegant, and private password vault.</p>
+    <div class="cta-buttons">
+      <a href="{{ url_for('routes.signup') }}" class="btn primary">Get Started</a>
+      <a href="{{ url_for('routes.login') }}" class="btn secondary">Log In</a>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="features">
+    <h2>Why Choose Cryptella?</h2>
+    <div class="feature-cards">
+      <div class="card">
+        <h3>🔒 End-to-End Encryption</h3>
+        <p>Only you can access your vault. We never store or see your passwords.</p>
+      </div>
+      <div class="card">
+        <h3>⚡ Fast & Intuitive</h3>
+        <p>Securely manage your accounts in seconds with our sleek interface.</p>
+      </div>
+      <div class="card">
+        <h3>🌍 Access Anywhere</h3>
+        <p>Use Cryptella on any device, anywhere - always encrypted, always safe.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="about">
+    <h2>About Cryptella</h2>
+    <p>
+      We're a small team on a big mission, to give everyday users full control of their digital security.
+    </p>
+    <p>
+      Our name blends “crypt” and “umbrella”, symbolising both encryption and total protection.
+      You bring the accounts. We'll keep them safe.
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Cryptella. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
